@@ -16,15 +16,21 @@
                 <h:panelGrid id="grid" columns="3" cellpadding="5">
                     
                     <p:outputLabel for="x" value="kwota" />
-                    <p:inputNumber id="x" value="#{calcBB.x}" required="true" />
+                    <p:inputText id="x" value="#{calcBB.x}" required="true">
+                    <f:validateDoubleRange minimum="1000"/>
+                    </p:inputText>
                     <p:message for="x" />
                     
                     <p:outputLabel for="y" value="oprocentowanie" />
-                    <p:inputNumber id="y" value="#{calcBB.y}" required="true" />
+                    <p:inputText id="y" value="#{calcBB.y}" required="true" >
+                    <f:validateDoubleRange minimum="1" maximum="100"/>
+                    </p:inputText>
                     <p:message for="y" />
                     
                     <p:outputLabel for="z" value="na ile lat" />
-                    <p:inputNumber id="z" value="#{calcBB.z}" required="true" />
+                    <p:inputText id="z" value="#{calcBB.z}" required="true" >
+                    <f:validateDoubleRange minimum="10" maximum="100"/>
+                    </p:inputText>
                     <p:message for="z" />
                     
                 </h:panelGrid>
