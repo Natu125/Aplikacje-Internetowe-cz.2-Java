@@ -16,19 +16,19 @@
                 <h:panelGrid id="grid" columns="3" cellpadding="5">
                     
                     <p:outputLabel for="x" value="kwota" />
-                    <p:inputText id="x" value="#{calcBB.x}" required="true">
+                    <p:inputText id="x" value="#{calcBB.x}" required="true" requiredMessage="kwota: Pole wymagane" converterMessage="kwota: parametr niepoprawny" validatorMessage="kwota: minimum 1000zł">
                     <f:validateDoubleRange minimum="1000"/>
                     </p:inputText>
                     <p:message for="x" />
                     
                     <p:outputLabel for="y" value="oprocentowanie" />
-                    <p:inputText id="y" value="#{calcBB.y}" required="true" >
+                    <p:inputText id="y" value="#{calcBB.y}" required="true" requiredMessage="oprocentowanie: Pole wymagane" converterMessage="oprocentowanie: parametr niepoprawny" validatorMessage="oprocentowanie: między 1 a 100">
                     <f:validateDoubleRange minimum="1" maximum="100"/>
                     </p:inputText>
                     <p:message for="y" />
                     
                     <p:outputLabel for="z" value="na ile lat" />
-                    <p:inputText id="z" value="#{calcBB.z}" required="true" >
+                    <p:inputText id="z" value="#{calcBB.z}" required="true" requiredMessage="na ile lat: Pole wymagane" converterMessage="na ile lat: parametr niepoprawny" validatorMessage="na ile lat: między 10 a 100">
                     <f:validateDoubleRange minimum="10" maximum="100"/>
                     </p:inputText>
                     <p:message for="z" />
