@@ -10,12 +10,12 @@
 
 	<ui:define name="pageContent">
 
-		<p:panel header="Kalkulator kredytowy">
+		<p:panel header="Kalkulator">
 
 			<p:messages id="msg" />
 
-			<h:form id="bla">
-                                <h:panelGrid id="grid" columns="3" cellpadding="5">
+			<h:form>
+                                <h:panelGrid columns="3" cellpadding="5" styleClass="bottom-space">
 
                                     <p:outputLabel for="x" value="kwota" />
                                     <p:inputText id="x" value="#{calcBB.x}" required="true" requiredMessage="kwota: Pole wymagane" converterMessage="kwota: parametr niepoprawny" validatorMessage="kwota: minimum 1000zł">
@@ -37,13 +37,11 @@
 
                                 </h:panelGrid>
 
-                                <p:messages id="msg" />
-
                                 <p:commandButton value="Oblicz" action="#{calcBB.calc()}" update="@form"/>
                                 <br />
                                 <p:commandButton value="Oblicz (AJAX)" action="#{calcBB.calc_AJAX()}" update="msg"/>
 
-                                <p:commandLink value="Informacje" action="#{calcBB.info()}" />
+                                <p:commandLink value="Informacje" action="#{calcBB.info()}" immediate="true"  />
                         </h:form>
 
 		</p:panel>
